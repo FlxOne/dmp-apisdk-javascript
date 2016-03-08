@@ -1,7 +1,7 @@
 window.require(['jquery', 'teradata/dmp/sdk/client', 'teradata/dmp/sdk/config', 'teradata/dmp/sdk/request'], function ($, Client, Config, Request) {
     var config = Config.getDefault();
     config.setEndpoint('https://platform.flxone.com/api/v2');
-    config.setCredentials('', '');
+    config.setCredentials('USERNAME_HERE', 'PASSWORD_HERE');
 
     var request = new Request('audience-builder/index');
     request.setParameter('a', 1);

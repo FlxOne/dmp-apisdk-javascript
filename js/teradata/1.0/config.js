@@ -1,5 +1,5 @@
 window.require.config({
-    debug: true,
+    debug: false,
     baseUrl: 'js',
     paths: {
         jquery: 'lib/jquery/1.12.1/jquery.min',

@@ -1,9 +1,14 @@
 window.define(function () {
+    var defaultMaxRetries = 5;
+
     var Config = function () {
         var instance = this;
-        instance.endpoint;
-        instance.credentials;
-        instance.maxRetries;
+        instance.endpoint = null;
+        instance.maxRetries = defaultMaxRetries;
+        instance.credentials = {
+            username: null,
+            password: null
+        };
 
         instance.setEndpoint = function (endpoint) {
             instance.endpoint = endpoint;
@@ -37,7 +42,7 @@ window.define(function () {
         getDefault: function () {
             var config = new Config();
             config.setEndpoint('https://platform.flxone.com/api');
-            config.setMaxRetries(5);
+            config.setMaxRetries(defaultMaxRetries);
             return config;
         }
     };

@@ -11,7 +11,7 @@ window.define(function () {
         instance.setParameters = function (map) {
             for (var i in map) {
                 if (map.hasOwnProperty(i)) {
-                    this.setParameter(i, map[i]);
+                    instance.setParameter(i, map[i]);
                 }
             }
         };
