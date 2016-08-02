@@ -2,8 +2,8 @@ window.define(['jquery'], function ($) {
     return function (config) {
         var instance = this;
         instance.config = config;
-        instance.authToken = null;
-        instance.csrf = null;
+        instance.authToken = config.getAuthToken();
+        instance.csrf = config.getCsrfToken();
         instance.loginAttempts = 0;
 
         instance.get = function (request) {

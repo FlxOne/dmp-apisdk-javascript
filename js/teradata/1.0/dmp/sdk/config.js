@@ -4,6 +4,8 @@ window.define(function () {
     var Config = function () {
         var instance = this;
         instance.endpoint = null;
+        instance.authToken = null;
+        instance.csrfToken = null;
         instance.maxRetries = defaultMaxRetries;
         instance.credentials = {
             username: null,
@@ -11,11 +13,31 @@ window.define(function () {
         };
 
         instance.setEndpoint = function (endpoint) {
+            if (endpoint.substr(-1) === '/') {
+                endpoint = endpoint.substr(0, endpoint.length - 1);
+            }
+
             instance.endpoint = endpoint;
         };
 
         instance.getEndpoint = function () {
             return instance.endpoint;
+        };
+
+        instance.setAuthToken = function (authToken) {
+            instance.authToken = authToken;
+        };
+
+        instance.getAuthToken = function () {
+            return instance.authToken;
+        };
+
+        instance.setCsrfToken = function (csrfToken) {
+            instance.csrfToken = csrfToken;
+        };
+
+        instance.getCsrfToken = function () {
+            return instance.csrfToken;
         };
 
         instance.setCredentials = function (username, password) {
